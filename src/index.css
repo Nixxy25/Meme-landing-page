@@ -1,68 +1,91 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+    font-family: 'Josefin Sans', system-ui;
+    text-transform: uppercase;
+    background-color: #efb17b5b;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.distinct{
+    font-family: 'Luckiest Guy',cursive;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.box {
+    box-shadow: 5px 3px  rgb(0, 0, 0);
   }
-  a:hover {
-    color: #747bff;
+
+
+  
+
+
+
+
+
+
+
+.carousel-wrapper {
+    width: 100%;
+    height: 10%;
+    overflow: hidden; /* Hide overflow to only show the moving box */
+    position: relative; /* Establish a positioning context for the box */
   }
-  button {
-    background-color: #f9f9f9;
+  
+  /* Box that will move */
+  .carousel-box {
+    display: flex;
+    height: 100%; /* Take up full height of the wrapper */
+    
+    background-color: #c87748; /* Background color of the box */
+    animation: move-box 10s linear infinite; /* Apply the moving animation */
   }
-}
+  
+  /* Content inside the box */
+  .carousel-content {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Keyframes for moving animation */
+  @keyframes move-box {
+    0% {
+      transform: translateX(0); /* Start from the initial position */
+    }
+    100% {
+      transform: translateX(-100%); /* Move to the left end */
+    }
+  }
+  
+  /* Optional: style the text inside */
+  .carousel-box p {
+    color: white; /* White text for better contrast against the blue background */
+    font-size: 16px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margins */
+    padding: 10px; /* Add padding if needed */
+  }
+  
+  /* Duplicate the content for seamless scrolling */
+  .carousel-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: blue; /* Ensure it matches the background color */
+    z-index: -1;
+    animation: move-box 10s linear infinite; /* Same animation as the box */
+  }
+  
+
+  
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+
+
+
