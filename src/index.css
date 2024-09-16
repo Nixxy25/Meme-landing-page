@@ -7,7 +7,7 @@ body{
     background-color: #f6d8b0;
 }
 .distinct{
-    font-family: 'Luckiest Guy',cursive;
+    font-family: 'Luckiest Guy';
 }
 
 .box {
@@ -16,6 +16,11 @@ body{
 
   .button{
     box-shadow: -2px 3px   rgb(0, 0, 0);
+  }
+
+  .button:hover{
+    background: #FAEBD7;
+    color: black;
   }
 
 
@@ -50,68 +55,6 @@ body{
     animation: 10s slide infinite linear;
     
 }
-  
-
-
-
-
-
-
-
-.carousel-wrapper {
-    width: 100%;
-    height: 10%;
-    overflow: hidden; /* Hide overflow to only show the moving box */
-    position: relative; /* Establish a positioning context for the box */
-  }
-  
-  /* Box that will move */
-  .carousel-box {
-    display: flex;
-    height: 100%; /* Take up full height of the wrapper */
-    
-    background-color: #c87748; /* Background color of the box */
-    animation: move-box 10s linear infinite; /* Apply the moving animation */
-  }
-  
-  /* Content inside the box */
-  .carousel-content {
-    display: flex;
-    flex: 1;
-  }
-  
-  /* Keyframes for moving animation */
-  @keyframes move-box {
-    0% {
-      transform: translateX(0); /* Start from the initial position */
-    }
-    100% {
-      transform: translateX(-100%); /* Move to the left end */
-    }
-  }
-  
-  /* Optional: style the text inside */
-  .carousel-box p {
-    color: white; /* White text for better contrast against the blue background */
-    font-size: 16px; /* Adjust font size as needed */
-    margin: 0; /* Remove default margins */
-    padding: 10px; /* Add padding if needed */
-  }
-  
-  /* Duplicate the content for seamless scrolling */
-  .carousel-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: blue; /* Ensure it matches the background color */
-    z-index: -1;
-    animation: move-box 10s linear infinite; /* Same animation as the box */
-  }
-  
-
   
 
 @tailwind base;
