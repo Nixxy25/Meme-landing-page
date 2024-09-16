@@ -4,18 +4,52 @@
 body{
     font-family: 'Josefin Sans', system-ui;
     text-transform: uppercase;
-    background-color: #efb17b5b;
+    background-color: #f6d8b0;
 }
-
 .distinct{
     font-family: 'Luckiest Guy',cursive;
 }
 
 .box {
-    box-shadow: 5px 3px  rgb(0, 0, 0);
+    box-shadow: 3px 3px  rgb(0, 0, 0);
+  }
+
+  .button{
+    box-shadow: -2px 3px   rgb(0, 0, 0);
   }
 
 
+  .text {
+    /* Adjust font size as needed */
+   /* Add padding if needed */
+   text-shadow: 3px 3px #FAEBD7;
+  }
+
+  @keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-100%);
+    }
+  }
+
+
+
+.kitty:hover .kitty-slide{
+   animation-play-state: paused;
+}
+
+.kitty{
+    white-space: nowrap;
+}
+
+.kitty-slide{
+ 
+    animation: 10s slide infinite linear;
+    
+}
   
 
 
